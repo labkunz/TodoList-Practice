@@ -1,11 +1,13 @@
 <html>
     <head>
         <title>ToDoList_20211112</title>
+        <link rel="stylesheet" href="style.css">
         <!-- <script src="script.js"></script> -->
     </head>
     <body>
         <div class="container">
             <div class="card">
+                <div class="mask"></div>
                 <h1>To Do List</h1>
                 <div class="input-event">
                     <input type="text" placeholder="Add your new todo" />
@@ -27,6 +29,7 @@
                     <button type="button" class="btn" id="eventEditSave" data-target="">OK</button>
                 </div>
             </div>
+            <!-- <div class="mask"></div> -->
         </div>
     </body>
     <script>
@@ -78,11 +81,15 @@
             editTarget.textContent = editContent
             
             editField.style.display = "none"
+            const mask = document.querySelector(".mask")
+            mask.style.display = "none";
         }
 
         function ShowEdit(targetTag) {
             const editField = document.querySelector(".edit-event")
-            editField.style.display = "block"
+            editField.style.display = "flex"
+            const mask = document.querySelector(".mask")
+            mask.style.display = "block";
 
             const eventName = editField.querySelector("input")
             const editTarget = editField.querySelector("button")
