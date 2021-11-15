@@ -39,7 +39,11 @@
             eventItem.classList.add("event-item")
             let eventName = document.createElement("div")
             eventName.classList.add("event-name")
-            eventName.textContent = targetTag.querySelector(".input-event input").value
+            let getContent = targetTag.querySelector(".input-event input").value
+            if (getContent === "") {
+                return false
+            }
+            eventName.textContent = getContent
             eventName.dataset.value = itemNum
             let editEvent = document.createElement("button")
             editEvent.textContent = "Edit"
